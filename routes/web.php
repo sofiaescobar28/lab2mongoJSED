@@ -19,4 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('productos', 'ProductosController');
+Route::resource('productos', ProductosController::class);
+Route::put('productos/{id}', [App\Http\Controllers\ProductoController::class, 'update']);
